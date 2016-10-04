@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block title %}Change Course: {{ object.title }}{% endblock %}
+
+
+{% block page_content %}
+<h1 class="hero">Change Course</h1>
+<hr>
+<div class="row">
+  <div class="col-md-8">
+    {% bootstrap_messages %}
+    <form action="" class="form-horizontal" method="post" enctype='multipart/form-data'>{% csrf_token %}
+      {% bootstrap_form form layout='horizontal' %}
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+          <input type="submit" value="Change" class="btn btn-primary" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

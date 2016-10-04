@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Course: {{ course.title }}{% endblock %}
+
+{% block page_content %}
+<div class="row">
+  <div class="col-md-2 col-md-push-10 text-right">
+    <a href="{% url 'change' course.id %}" class="btn btn-primary">Change</a>
+  </div>
+  <div class="col-md-10 col-md-pull-2">
+    <h1 style="margin:0;">{{ course.title }}&nbsp;<span style="display:inline-block;width:50px;"></span></h1>
+  </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <p>{{ course.description }}</p>
+        {% if course.image  %}
+        <img src="{{ MEDIA_URL }}{{ course.image }}" />
+        {% endif %}
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <ul>
+            <li>
+                Instructor: {{ course.instructor }}
+            </li>
+            <li>
+                Duration: {{ course.get_duration_display }}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

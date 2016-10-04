@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1 class="hero">Django Course Catalog</h1>
+<p>Please select from our awesome courses!</p>
+<hr>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Course Title</th>
+      <th>Instructor</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for course in object_list %}
+    <tr>
+      <td>{{ course.id }}</td>
+      <td>
+        <a href="{% url 'detail' course.id %}">{{ course.title }}</a>
+      </td>
+      <td>{{ course.instructor }}</td>
+      <td>{{ course.duration }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

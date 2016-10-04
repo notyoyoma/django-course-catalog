@@ -1,0 +1,46 @@
+nav {
+  background: #F8F8F8;
+  padding: 1em 0;
+  border-bottom: 1px solid #E9E9E9;
+  color: #777;
+  margin-bottom: 3rem;
+}
+
+nav ul {
+  margin-bottom:0;
+}
+
+nav li + li {
+  margin-left: 1em;
+}
+
+nav a {
+  color: inherit;
+}
+
+nav strong {
+  font-size: 1.2em;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.hero {
+  font-size: 5em;
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    font-size: 3em;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #E9E9E9;
+  margin: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
